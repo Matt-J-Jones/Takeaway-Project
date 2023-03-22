@@ -6,6 +6,7 @@ class MenuItem
   end
 
   def return_item
+    # returns string of items name, full price, and if it is sold out
     return "#{@name}: £#{return_price_str}, #{return_status}"
   end
 
@@ -18,13 +19,14 @@ class MenuItem
   end
 
   def return_price_str
+    # returns price as a string, with trailing 0
     temp = @price.to_s.split(".")
     if temp[1].length < 2
       return [temp[0], temp[1]+ "0"].join(".")
     end
   end
 
-  def avalibility?
+  def availability?
     return @availability
   end
 
@@ -33,7 +35,7 @@ class MenuItem
   end
 
   def return_status
-    if avalibility?
+    if availability?
       return "Available"
     else
       return "Sold Out"

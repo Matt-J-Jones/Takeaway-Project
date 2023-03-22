@@ -10,7 +10,7 @@ RSpec.describe MenuItem do
     item = MenuItem.new("Chips", 2.00, true)
     expect(item.return_name).to eq "Chips"
     expect(item.return_price).to eq 2.00
-    expect(item.avalibility?).to eq true
+    expect(item.availability?).to eq true
   end
 
   it "Creates menu item, marks as sold out, returns sold out" do

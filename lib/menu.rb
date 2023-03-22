@@ -4,9 +4,10 @@ class Menu
   end
 
   def add(item)
-    # item is a string return from menu_item
-    @menu << item.return_item
-    @menu << item.return_price
+    # item is menu item
+    # return_item is a string
+    # return_price is an int of the items price
+    @menu << [item.return_item, item.return_price]
   end
 
   def print_menu
