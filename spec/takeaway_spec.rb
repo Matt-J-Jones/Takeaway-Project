@@ -76,7 +76,7 @@ RSpec.describe TakeawayOrder do
     fake_time = Time.new(2023, 3, 22, 16, 45, 25)
     fake_client = double :client
     allow(fake_client).to receive_message_chain(:messages, :create).with(from: '+14346867589', to: ENV['PHONE'], body: "Your order will arrive at 16:45")
-    expect(order.tracking_and_confirmation(fake_time, fake_client)).to eq "I was successful"
+    expect(order.tracking_and_confirmation(fake_time, fake_client)).to eq true
     
   end
 end
